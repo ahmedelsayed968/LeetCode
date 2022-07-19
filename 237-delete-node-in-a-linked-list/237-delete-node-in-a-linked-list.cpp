@@ -9,6 +9,15 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
+        // doing one shift of the noode->value 
+        ListNode* nextNode = node->next;
+        swap(nextNode->val,node->val);
+        ListNode* nextNextNode = nextNode->next;
+        node->next = nextNextNode;
+        delete nextNode;
+        
+    }
+    void first_approach(ListNode*node){
         // shifting the node->val until the end of the list and delete it
         ListNode* temp1 = node;
         ListNode* temp2 = node->next;
@@ -28,7 +37,6 @@ public:
             
                 
         }
-        
         
     }
 };
