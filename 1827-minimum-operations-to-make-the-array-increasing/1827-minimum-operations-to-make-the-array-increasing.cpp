@@ -6,12 +6,10 @@ public:
             return 0;
         int ct = 0;
         for(int i = 0;i<size-1;i++){
-            if(nums[i]==nums[i+1])
-                nums[i+1]++,ct++;
-            else if(nums[i] >nums[i+1]){
+            if(nums[i] >=nums[i+1]){
                 int cal = nums[i]-nums[i+1]+1;
                 ct += cal;
-                nums[i+1] +=cal;
+                nums[i+1] =nums[i]+1;
             }
             
         }
