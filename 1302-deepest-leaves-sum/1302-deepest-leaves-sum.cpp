@@ -21,25 +21,23 @@ public:
             return 0; 
         queue<TreeNode*> q;
         q.push(root);
-        vector<int>lastLevel;
+        int lastLevel;
         for(int size=1;!q.empty();size=q.size()){
-            vector<int> temp;
+            int sum = 0;
             while(size--){
                 TreeNode* curr = q.front();
                 q.pop();
-                temp.push_back(curr->val);
+                sum += curr->val;
                 if(curr->left)
                     q.push(curr->left);
                 if(curr->right)
                     q.push(curr->right);
             }
             if(q.empty())
-                lastLevel = temp;
+                lastLevel = sum;
         }
-        int sum = 0;
-        for(auto it:lastLevel)
-            sum += it;
-        return sum;
+        
+        return lastLevel;
         
         
     }
