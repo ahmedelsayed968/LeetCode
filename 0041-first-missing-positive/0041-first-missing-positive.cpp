@@ -7,6 +7,8 @@ public:
         for(int i = 0;i<nums.size();i++)
             if(st.count(res))
                 res++;
+            else
+                return res;
         return res;
     }
 };
